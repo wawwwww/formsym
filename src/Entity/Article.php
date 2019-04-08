@@ -61,10 +61,15 @@ class Article
      */
     private $Nbviews;
 
-    public function getId(): ?int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
+
+
 
     public function getTitle(): ?string
     {
