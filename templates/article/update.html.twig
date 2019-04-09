@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un article{% endblock %}
+
+{% block body %}
+    <h1>Modification de l'article</h1>
+
+    {{ form_start(editForm) }}
+    {{ form_widget(editForm) }}
+    <input type="submit" value="Modifier l'article" class="btn btn-success">
+    {{ form_end(editForm) }}
+{% endblock %}
+

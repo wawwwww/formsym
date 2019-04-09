@@ -1,35 +1,21 @@
-
-
 {% extends 'base.html.twig' %}
-
-
 
 {% block title %}Liste des articles{% endblock %}
 
-
-
 {% block body %}
-
     <h1>Liste des articles</h1>
 
-
-
     <ul>
-
         {% for article in articles %}
-
             <li>
-
                 {{ article.title }}
-
-                <a href="{{ path('article_show', {id: article.id }) }}">Lire l'article</a>
-
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="{{ path('article_show', {id: article.id }) }}" class="btn btn-sm  btn-outline-secondary">Lire l'article</a>
+                    <a href="{{ path('article_update', {id: article.id }) }}" class="btn btn-sm btn-outline-secondary">Modifier l'article</a>
+                    <a href="{{ path('article_delete', {id: article.id }) }}" class="btn btn-sm btn-outline-secondary">Supprimer l'article</a>
+                </div>
             </li>
-
         {% endfor %}
-
     </ul>
-
-
 
 {% endblock %}
