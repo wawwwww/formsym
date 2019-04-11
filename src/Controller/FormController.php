@@ -6,10 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-class FormController extends AbstractController
+class
+FormController extends AbstractController
 {
     /**
-     * @Route("/article", name="article_list")
+     * @Route("/", name="article_list")
      */
     public function index()
     {

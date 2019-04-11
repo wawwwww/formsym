@@ -66,12 +66,18 @@ class Article
      * @ORM\OneToMany(targetEntity="App\Entity\Commentaire", mappedBy="article", orphanRemoval=true)
      */
     private $commentaires;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $likes;
     public function __construct()
     {
         // On ajoute la date de création
         $this->setCreateAt(new \DateTime());
         // On initialise le nombre de vues à 0
         $this->setNbViews(0);
+        $this->setLikes(0);
         $this->commentaires = new ArrayCollection();
     }
     public function toString()
@@ -229,6 +235,18 @@ class Article
                 $commentaire->setArticle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLikes(): ?int
+    {
+        return $this->likes;
+    }
+
+    public function setLikes(int $likes): self
+    {
+        $this->likes = $likes;
 
         return $this;
     }

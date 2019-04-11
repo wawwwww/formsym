@@ -13,9 +13,13 @@
     <h1>{{ article.title }}</h1>
 
     <p>{{ article.description }}</p>
-
-
-
     <a href="{{ path('article_list') }}">Retour à la liste des articles</a>
 
+
+{% endblock %}
+
+
+{% javascripts %}
+    {{ parent }}
+    <script src="{{ assets('js/ajax-article-likes.js') }}"></script>
 {% endblock %}
